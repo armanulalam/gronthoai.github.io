@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grontho AI - Learn Smarter, Achieve More</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Chart.js for Data Visualization -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <i class="fas fa-graduation-cap"></i>
+            <h2>Grontho AI</h2>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="#dashboard" class="nav-item active" data-section="dashboard">
+                <i class="fas fa-home"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="#evaluate" class="nav-item" data-section="evaluate">
+                <i class="fas fa-chart-line"></i>
+                <span>Evaluate</span>
+            </a>
+            <a href="#mock-test" class="nav-item" data-section="mock-test">
+                <i class="fas fa-file-alt"></i>
+                <span>Mock Test</span>
+            </a>
+            <a href="#ask-tutor" class="nav-item" data-section="ask-tutor">
+                <i class="fas fa-comments"></i>
+                <span>Ask Tutor</span>
+            </a>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="user-profile">
+                <div class="avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="user-info">
+                    <h4>Md Armanul Alam</h4>
+                    <p>Grade 11</p>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <!-- Header -->
+        <header class="top-header">
+            <div class="header-left">
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h1 id="pageTitle">Dashboard</h1>
+            </div>
+            <div class="header-right">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search...">
+                </div>
+                <button class="notification-btn">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Dashboard Section -->
+        <section id="dashboard" class="content-section active">
+            <div class="welcome-banner">
+                <div class="welcome-text">
+                    <h2>Welcome back, Md Armanul! 👋</h2>
+                    <p>Ready to continue your learning journey today?</p>
+                </div>
+                <div class="streak-counter">
+                    <i class="fas fa-fire"></i>
+                    <div>
+                        <h3>7 Days</h3>
+                        <p>Learning Streak</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon purple">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>24</h3>
+                        <p>Lessons Completed</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon blue">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>48h</h3>
+                        <p>Study Time</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon green">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>85%</h3>
+                        <p>Average Score</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon orange">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>12</h3>
+                        <p>Achievements</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-grid">
+                <div class="card progress-card">
+                    <div class="card-header">
+                        <h3>Learning Progress</h3>
+                        <select class="time-filter">
+                            <option>This Week</option>
+                            <option>This Month</option>
+                            <option>This Year</option>
+                        </select>
+                    </div>
+                    <div class="chart-container" style="height: 300px;">
+                        <canvas id="progressChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="card upcoming-tasks">
+                    <div class="card-header">
+                        <h3>Upcoming Tasks</h3>
+                        <a href="#" class="view-all">View All</a>
+                    </div>
+                    <div class="task-list">
+                        <div class="task-item">
+                            <div class="task-icon math">
+                                <i class="fas fa-calculator"></i>
+                            </div>
+                            <div class="task-info">
+                                <h4>Mathematics Quiz</h4>
+                                <p>Due: Tomorrow, 2:00 PM</p>
+                            </div>
+                            <div class="task-status pending">Pending</div>
+                        </div>
+                        <div class="task-item">
+                            <div class="task-icon science">
+                                <i class="fas fa-flask"></i>
+                            </div>
+                            <div class="task-info">
+                                <h4>Physics Assignment</h4>
+                                <p>Due: Dec 15, 5:00 PM</p>
+                            </div>
+                            <div class="task-status pending">Pending</div>
+                        </div>
+                        <div class="task-item">
+                            <div class="task-icon english">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <div class="task-info">
+                                <h4>English Essay</h4>
+                                <p>Due: Dec 18, 11:59 PM</p>
+                            </div>
+                            <div class="task-status pending">Pending</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quick-access-grid">
+                <div class="quick-card" data-section="mock-test">
+                    <div class="quick-icon purple">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Generate Mock Test</h3>
+                    <p>Create practice tests for any subject</p>
+                    <button class="quick-btn">Get Started</button>
+                </div>
+                <div class="quick-card" data-section="ask-tutor">
+                    <div class="quick-icon blue">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Ask AI Tutor</h3>
+                    <p>Get instant help with your questions</p>
+                    <button class="quick-btn">Ask Now</button>
+                </div>
+                <div class="quick-card" data-section="evaluate">
+                    <div class="quick-icon green">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>View Progress</h3>
+                    <p>Track your performance and analytics</p>
+                    <button class="quick-btn">View Reports</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Evaluate Section -->
+        <section id="evaluate" class="content-section">
+            <div class="section-header">
+                <h2>Performance Evaluation</h2>
+                <p>Track your learning progress and identify areas for improvement</p>
+            </div>
+
+            <div class="evaluation-grid">
+                <div class="card score-overview">
+                    <div class="card-header">
+                        <h3>Overall Performance</h3>
+                        <div class="score-badge excellent">85%</div>
+                    </div>
+                    <div class="score-details">
+                        <div class="score-item">
+                            <span>Tests Taken</span>
+                            <strong>18</strong>
+                        </div>
+                        <div class="score-item">
+                            <span>Average Score</span>
+                            <strong>85%</strong>
+                        </div>
+                        <div class="score-item">
+                            <span>Highest Score</span>
+                            <strong>98%</strong>
+                        </div>
+                        <div class="score-item">
+                            <span>Improvement</span>
+                            <strong>+12%</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card subject-performance">
+                    <div class="card-header">
+                        <h3>Subject-wise Performance</h3>
+                    </div>
+                    <div class="subject-list">
+                        <div class="subject-item">
+                            <div class="subject-info">
+                                <i class="fas fa-calculator subject-icon math"></i>
+                                <span>Mathematics</span>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar" style="width: 92%;">92%</div>
+                            </div>
+                        </div>
+                        <div class="subject-item">
+                            <div class="subject-info">
+                                <i class="fas fa-flask subject-icon science"></i>
+                                <span>Physics</span>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar" style="width: 88%;">88%</div>
+                            </div>
+                        </div>
+                        <div class="subject-item">
+                            <div class="subject-info">
+                                <i class="fas fa-atom subject-icon science"></i>
+                                <span>Chemistry</span>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar" style="width: 85%;">85%</div>
+                            </div>
+                        </div>
+                        <div class="subject-item">
+                            <div class="subject-info">
+                                <i class="fas fa-book subject-icon english"></i>
+                                <span>English</span>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar" style="width: 78%;">78%</div>
+                            </div>
+                        </div>
+                        <div class="subject-item">
+                            <div class="subject-info">
+                                <i class="fas fa-globe subject-icon history"></i>
+                                <span>History</span>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar" style="width: 82%;">82%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="analytics-grid">
+                <div class="card performance-chart">
+                    <div class="card-header">
+                        <h3>Performance Over Time</h3>
+                        <select class="time-filter">
+                            <option>Last 6 Months</option>
+                            <option>Last 3 Months</option>
+                            <option>Last Month</option>
+                        </select>
+                    </div>
+                    <div class="chart-container" style="height: 300px;">
+                        <canvas id="performanceChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="card strengths-weaknesses">
+                    <div class="card-header">
+                        <h3>Strengths & Weaknesses</h3>
+                    </div>
+                    <div class="analysis-content">
+                        <div class="analysis-section">
+                            <h4><i class="fas fa-check-circle"></i> Strengths</h4>
+                            <div class="tag-list">
+                                <span class="tag strength">Algebra</span>
+                                <span class="tag strength">Mechanics</span>
+                                <span class="tag strength">Grammar</span>
+                                <span class="tag strength">Organic Chemistry</span>
+                            </div>
+                        </div>
+                        <div class="analysis-section">
+                            <h4><i class="fas fa-exclamation-circle"></i> Areas to Improve</h4>
+                            <div class="tag-list">
+                                <span class="tag weakness">Geometry</span>
+                                <span class="tag weakness">Thermodynamics</span>
+                                <span class="tag weakness">Essay Writing</span>
+                            </div>
+                        </div>
+                        <div class="recommendation">
+                            <i class="fas fa-lightbulb"></i>
+                            <p><strong>Recommendation:</strong> Focus on practicing geometry problems and thermodynamics concepts. Consider taking additional mock tests in these areas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card recent-tests">
+                <div class="card-header">
+                    <h3>Recent Test Results</h3>
+                    <button class="btn-secondary">View All Tests</button>
+                </div>
+                <div class="test-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Test Name</th>
+                                <th>Subject</th>
+                                <th>Date</th>
+                                <th>Score</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Algebra Practice Test</td>
+                                <td><span class="subject-badge math">Mathematics</span></td>
+                                <td>Dec 8, 2024</td>
+                                <td><strong>92%</strong></td>
+                                <td><span class="status-badge excellent">Excellent</span></td>
+                                <td><button class="btn-icon"><i class="fas fa-eye"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Newton's Laws Quiz</td>
+                                <td><span class="subject-badge science">Physics</span></td>
+                                <td>Dec 6, 2024</td>
+                                <td><strong>88%</strong></td>
+                                <td><span class="status-badge good">Good</span></td>
+                                <td><button class="btn-icon"><i class="fas fa-eye"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Chemical Bonding Test</td>
+                                <td><span class="subject-badge science">Chemistry</span></td>
+                                <td>Dec 4, 2024</td>
+                                <td><strong>85%</strong></td>
+                                <td><span class="status-badge good">Good</span></td>
+                                <td><button class="btn-icon"><i class="fas fa-eye"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Grammar & Vocabulary</td>
+                                <td><span class="subject-badge english">English</span></td>
+                                <td>Dec 2, 2024</td>
+                                <td><strong>78%</strong></td>
+                                <td><span class="status-badge average">Average</span></td>
+                                <td><button class="btn-icon"><i class="fas fa-eye"></i></button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mock Test Section -->
+        <section id="mock-test" class="content-section">
+            <div class="section-header">
+                <h2>Generate Mock Test</h2>
+                <p>Create customized practice tests to enhance your learning</p>
+            </div>
+
+            <div class="mock-test-container">
+                <div class="card test-generator">
+                    <div class="generator-form">
+                        <div class="form-group">
+                            <label><i class="fas fa-book"></i> Select Subject</label>
+                            <div class="subject-selector">
+                                <button class="subject-btn active" data-subject="mathematics">
+                                    <i class="fas fa-calculator"></i>
+                                    <span>Mathematics</span>
+                                </button>
+                                <button class="subject-btn" data-subject="physics">
+                                    <i class="fas fa-flask"></i>
+                                    <span>Physics</span>
+                                </button>
+                                <button class="subject-btn" data-subject="chemistry">
+                                    <i class="fas fa-atom"></i>
+                                    <span>Chemistry</span>
+                                </button>
+                                <button class="subject-btn" data-subject="english">
+                                    <i class="fas fa-book"></i>
+                                    <span>English</span>
+                                </button>
+                                <button class="subject-btn" data-subject="history">
+                                    <i class="fas fa-globe"></i>
+                                    <span>History</span>
+                                </button>
+                                <button class="subject-btn" data-subject="biology">
+                                    <i class="fas fa-dna"></i>
+                                    <span>Biology</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label><i class="fas fa-list"></i> Select Topics</label>
+                            <div class="topic-selector" id="topicSelector">
+                                <!-- Topics will be dynamically loaded based on subject -->
+                                <div class="topic-checkbox">
+                                    <input type="checkbox" id="topic1" checked>
+                                    <label for="topic1">Algebra</label>
+                                </div>
+                                <div class="topic-checkbox">
+                                    <input type="checkbox" id="topic2" checked>
+                                    <label for="topic2">Geometry</label>
+                                </div>
+                                <div class="topic-checkbox">
+                                    <input type="checkbox" id="topic3">
+                                    <label for="topic3">Trigonometry</label>
+                                </div>
+                                <div class="topic-checkbox">
+                                    <input type="checkbox" id="topic4">
+                                    <label for="topic4">Calculus</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label><i class="fas fa-signal"></i> Difficulty Level</label>
+                                <div class="difficulty-selector">
+                                    <button class="difficulty-btn easy" data-difficulty="easy">
+                                        <i class="fas fa-smile"></i>
+                                        <span>Easy</span>
+                                    </button>
+                                    <button class="difficulty-btn medium active" data-difficulty="medium">
+                                        <i class="fas fa-meh"></i>
+                                        <span>Medium</span>
+                                    </button>
+                                    <button class="difficulty-btn hard" data-difficulty="hard">
+                                        <i class="fas fa-fire"></i>
+                                        <span>Hard</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label><i class="fas fa-hashtag"></i> Number of Questions</label>
+                                <div class="question-counter">
+                                    <button class="counter-btn minus">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                    <input type="number" value="20" min="5" max="50" id="questionCount">
+                                    <button class="counter-btn plus">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label><i class="fas fa-clipboard-list"></i> Test Format</label>
+                            <div class="format-selector">
+                                <div class="format-option">
+                                    <input type="radio" id="mcq" name="format" checked>
+                                    <label for="mcq">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Multiple Choice (MCQ)</span>
+                                    </label>
+                                </div>
+                                <div class="format-option">
+                                    <input type="radio" id="short" name="format">
+                                    <label for="short">
+                                        <i class="fas fa-pen"></i>
+                                        <span>Short Answer</span>
+                                    </label>
+                                </div>
+                                <div class="format-option">
+                                    <input type="radio" id="mixed" name="format">
+                                    <label for="mixed">
+                                        <i class="fas fa-random"></i>
+                                        <span>Mixed Format</span>
+                                    </label>
+                                </div>
+                                <div class="format-option">
+                                    <input type="radio" id="truefalse" name="format">
+                                    <label for="truefalse">
+                                        <i class="fas fa-question-circle"></i>
+                                        <span>True/False</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label><i class="fas fa-clock"></i> Time Limit</label>
+                            <select class="time-select">
+                                <option value="15">15 minutes</option>
+                                <option value="30" selected>30 minutes</option>
+                                <option value="45">45 minutes</option>
+                                <option value="60">60 minutes</option>
+                                <option value="90">90 minutes</option>
+                                <option value="120">120 minutes</option>
+                            </select>
+                        </div>
+
+                        <button class="btn-generate" id="generateTestBtn">
+                            <i class="fas fa-magic"></i>
+                            <span>Generate Mock Test</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card test-preview">
+                    <div class="preview-header">
+                        <h3>Test Preview</h3>
+                        <span class="preview-badge">Preview Mode</span>
+                    </div>
+                    <div class="preview-content" id="testPreview">
+                        <div class="preview-empty">
+                            <i class="fas fa-clipboard-list"></i>
+                            <p>Configure your test settings and click "Generate Mock Test" to see a preview</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ask Tutor Section -->
+        <section id="ask-tutor" class="content-section">
+            <div class="section-header">
+                <h2>Ask AI Tutor</h2>
+                <p>Get instant, clear explanations for all your questions</p>
+            </div>
+
+            <div class="tutor-container">
+                <div class="chat-sidebar">
+                    <div class="sidebar-header">
+                        <h3>Quick Questions</h3>
+                    </div>
+                    <div class="quick-questions">
+                        <button class="quick-question-btn">
+                            <i class="fas fa-calculator"></i>
+                            <span>How do I solve quadratic equations?</span>
+                        </button>
+                        <button class="quick-question-btn">
+                            <i class="fas fa-flask"></i>
+                            <span>Explain Newton's Third Law</span>
+                        </button>
+                        <button class="quick-question-btn">
+                            <i class="fas fa-atom"></i>
+                            <span>What is covalent bonding?</span>
+                        </button>
+                        <button class="quick-question-btn">
+                            <i class="fas fa-book"></i>
+                            <span>Difference between metaphor and simile?</span>
+                        </button>
+                        <button class="quick-question-btn">
+                            <i class="fas fa-dna"></i>
+                            <span>Explain photosynthesis process</span>
+                        </button>
+                    </div>
+                    <div class="chat-tips">
+                        <h4><i class="fas fa-lightbulb"></i> Tips for Better Answers</h4>
+                        <ul>
+                            <li>Be specific about what you don't understand</li>
+                            <li>Include the subject or topic</li>
+                            <li>Ask for examples if needed</li>
+                            <li>Request step-by-step explanations</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="chat-main">
+                    <div class="chat-messages" id="chatMessages">
+                        <div class="message tutor-message">
+                            <div class="message-avatar">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="message-content">
+                                <div class="message-header">
+                                    <strong>AI Tutor</strong>
+                                    <span class="message-time">Just now</span>
+                                </div>
+                                <div class="message-text">
+                                    <p>Hello! I'm your AI Tutor, here to help you understand any topic clearly. 👋</p>
+                                    <p>Feel free to ask me anything about your studies - whether it's math, science, languages, or any other subject. I'll provide clear, detailed explanations with examples!</p>
+                                    <p><strong>What would you like to learn today?</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chat-input-container">
+                        <div class="typing-indicator" id="typingIndicator" style="display: none;">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <p>AI Tutor is typing...</p>
+                        </div>
+                        <div class="chat-input-wrapper">
+                            <button class="attachment-btn" title="Attach image">
+                                <i class="fas fa-paperclip"></i>
+                            </button>
+                            <textarea id="chatInput" placeholder="Type your question here..." rows="1"></textarea>
+                            <button class="send-btn" id="sendBtn">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner">
+            <i class="fas fa-graduation-cap"></i>
+            <p>Generating your test...</p>
+        </div>
+    </div>
+    <!-- Vue 3 -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+    <!-- Vue Router -->
+    <script src="https://unpkg.com/vue-router@4/dist/vue-router.global.prod.js"></script>
+
+    <script>
+        const { createApp, ref } = Vue;
+        const { createRouter, createWebHashHistory } = VueRouter;
+
+        // Routes (mapping section names)
+        const routes = [
+            { path: '/', redirect: '/dashboard' },
+            { path: '/dashboard', component: { template: '<div></div>' } },
+            { path: '/evaluate', component: { template: '<div></div>' } },
+            { path: '/mock-test', component: { template: '<div></div>' } },
+            { path: '/ask-tutor', component: { template: '<div></div>' } },
+        ];
+
+        const router = createRouter({
+            history: createWebHashHistory(),
+            routes
+        });
+
+        const app = createApp({
+            setup() {
+                const currentSection = ref('dashboard');
+                const pageTitle = ref('Dashboard');
+
+                const navigate = (section) => {
+                    currentSection.value = section;
+                    pageTitle.value = section.charAt(0).toUpperCase() + section.slice(1).replace('-', ' ');
+                    router.push('/' + section);
+                };
+
+                // Sync section with router
+                router.afterEach((to) => {
+                    const section = to.path.replace('/', '');
+                    if(section) {
+                        currentSection.value = section;
+                        pageTitle.value = section.charAt(0).toUpperCase() + section.slice(1).replace('-', ' ');
+                    }
+                });
+
+                return { currentSection, pageTitle, navigate };
+            }
+        });
+
+        app.use(router);
+        app.mount('body');
+    </script>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
